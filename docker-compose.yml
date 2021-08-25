@@ -18,6 +18,7 @@ services:
       - db
 
   db:
+    build: ./mysql
     image: mysql:latest
     ports:
       - 13306:3306

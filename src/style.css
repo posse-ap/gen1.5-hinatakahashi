@@ -1,0 +1,75 @@
+.container {
+  margin: 0 auto;
+  width: 50%;
+}
+.red {
+  color:white;
+  background-color: #fd6647;
+}
+.blue {
+  color: white;
+  background-color: #08B3F0;
+}
+#red1 {
+  background: linear-gradient(transparent 80%, #fd6647 0);
+  display: inline-block;
+}
+#blue1 {
+  background: linear-gradient(transparent 80%, #08b3f0 0);
+  display: inline-block;
+}
+.commentbox {
+  display: none;
+  border: 1px solid #ebebeb;
+  padding: 13px;
+  margin: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 2px 2px rgba(0, 0, 0, .13);
+  -webkit-box-shadow: 0 3px 2px -2px rgba(0, 0, 0, .13);
+  font-size: 100%;
+}
+.commentbox-block{
+  display: block;
+}
+.answershow {
+  font-size: 16px;
+  font-family: 'Hiragino Kaku Gothic ProN';
+  font-weight: 300;
+}
+.cantclick {
+  pointer-events: none;
+}
+#true1 {
+  font-weight: 400;
+}
+body img {
+  width: 100%;
+}
+h2 {
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 600;
+  background: linear-gradient(transparent 70%, #f7ff4e 0) ;
+  display: inline-block;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+li {
+  display: block;
+  border: 1px solid #ebebeb;
+  padding: 13px;
+  margin: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 2px 2px rgba(0, 0, 0, .13);
+  -webkit-box-shadow: 0 3px 2px -2px rgba(0, 0, 0, .13);
+  font-size: 100%;
+}

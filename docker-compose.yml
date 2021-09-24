@@ -3,40 +3,31 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8080:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./www/html:/var/www/html
+      - "80:80"
     depends_on:
-      - php
-
-  php:
+      - phpfpm
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./src:/var/www/html
+  phpfpm:
     build: ./php
-    volumes:
-      - ./www/html:/var/www/html
+    image: php:7.4-fpm
     depends_on:
-      - db
-
-  db:
-    build: ./mysql
-    image: mysql:latest
-    ports:
-      - "13306:3306"
+      - mysql
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./mysql/sql:/docker-entrypoint-initdb.d
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./src:/var/www/html
+  mysql:
+    image: mysql:latest
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     environment:
-      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: hina
       MYSQL_USER: hina
       MYSQL_PASSWORD: password
-      MYSQL_DATABASE: hina
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
+      MYSQL_ROOT_PASSWORD: password
     ports:
-      - "8888:80"
-    depends_on:
-      - db
-
+      - "3306:3306"
+    volumes:
+      - ./mysql/sql:/docker-entrypoint-initdb.d
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf

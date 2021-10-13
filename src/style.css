@@ -1,75 +1,82 @@
-.container {
+/* ページ全体 */
+
+.main {
   margin: 0 auto;
-  width: 50%;
+  width: 570px;
+  margin-top: 90px;
+  margin-bottom: 90px;
 }
-.red {
-  color:white;
-  background-color: #fd6647;
+
+/* 問題 */
+
+.quiz {
+  margin-top: 20px;
 }
-.blue {
-  color: white;
-  background-color: #08B3F0;
-}
-#red1 {
-  background: linear-gradient(transparent 80%, #fd6647 0);
-  display: inline-block;
-}
-#blue1 {
-  background: linear-gradient(transparent 80%, #08b3f0 0);
-  display: inline-block;
-}
-.commentbox {
-  display: none;
-  border: 1px solid #ebebeb;
-  padding: 13px;
-  margin: 10px 0;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 3px 2px 2px rgba(0, 0, 0, .13);
-  -webkit-box-shadow: 0 3px 2px -2px rgba(0, 0, 0, .13);
-  font-size: 100%;
-}
-.commentbox-block{
-  display: block;
-}
-.answershow {
-  font-size: 16px;
-  font-family: 'Hiragino Kaku Gothic ProN';
-  font-weight: 300;
-}
-.cantclick {
-  pointer-events: none;
-}
-#true1 {
-  font-weight: 400;
-}
-body img {
-  width: 100%;
-}
-h2 {
+
+.quiz h1 {
   font-size: 17px;
-  line-height: 20px;
-  font-weight: 600;
-  background: linear-gradient(transparent 70%, #f7ff4e 0) ;
-  display: inline-block;
+  display: inline;
+  background: linear-gradient(transparent 70%, #f7ff4e 0);
 }
-ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 0px;
+
+.quiz img {
+  width: 100%;
+  margin: 0 auto 0;
 }
-li {
-  display: block;
-  border: 1px solid #ebebeb;
-  padding: 13px;
+
+.quiz ul {
+  list-style: none;
   margin: 10px 0;
+  padding: 13px 0;
+}
+
+.quiz li {
   font-weight: 600;
+  padding: 0.1em 0.5em;
+  border: solid 1px #d3d3d3;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.2);
+  margin-bottom: 6px;
+  height: 39px;
+  padding-left: 13px;
+  padding-top: 13px;
+}
+
+/* 選択肢（回答前） */
+
+.quiz .answerlist {
   cursor: pointer;
-  box-shadow: 0 3px 2px 2px rgba(0, 0, 0, .13);
-  -webkit-box-shadow: 0 3px 2px -2px rgba(0, 0, 0, .13);
-  font-size: 100%;
+}
+
+/* 選択肢（回答後）（正解） */
+
+.quiz .answer_valid {
+  background-color: #08b3f0;
+  color: #ffffff;
+}
+
+/* 選択肢（回答後）（不正解） */
+
+.quiz .answer_invalid {
+  background-color: #fd6647;
+  color: #ffffff;
+}
+
+/* 問題 答えボックス */
+
+.quiz .answerbox {
+  display: none;
+  height: 77px;
+  line-height: 30px;
+}
+
+/* 問題 答えボックス 正解 */
+
+.quiz .answerbox_valid {
+  background: linear-gradient(transparent 70%, #08b3f0 0);
+}
+
+/* 問題 答えボックス 不正解 */
+
+.quiz .answerbox_invalid {
+  background: linear-gradient(transparent 70%, #fd6647 0);
 }

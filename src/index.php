@@ -45,17 +45,24 @@ foreach ($questions as $question) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>
-    <?php
-    print_r ($question['name']); ?>
-  </h1>
-  <ul>
-    <li><?php print_r($choices[0]['name']);?></li>
-    <li><?php print_r($choices[1]['name']);?></li>
-    <li><?php print_r($choices[2]['name']);?></li>
-  </ul>
-  
-  <!-- <script src="quizy.js"></script> -->
-</body>
-</html>
+    <div class="main">
 
+        <div class="quiz">
+            <h1><?php print_r ($question['name']); ?></h1>
+            <img src="img1.png">
+            <ul>
+                <li id="answerlist_1_1" name="answerlist_1" class="answerlist" onclick="check(1, 1, 1)"><?php print_r($choices[0]['name']);?></li>
+                <li id="answerlist_1_2" name="answerlist_1" class="answerlist" onclick="check(1, 2, 1)"><?php print_r($choices[1]['name']);?></li>
+                <li id="answerlist_1_3" name="answerlist_1" class="answerlist" onclick="check(1, 3, 1)"><?php print_r($choices[2]['name']);?></li>
+                <li id="answerbox_1" class="answerbox">
+                    <span id="answertext_1"></span><br>
+                    <span>正解は「<?php print_r($choices[0]['name']);?>」です！</span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="./quizy1.js"></script>
+    </div>
+</body>
+
+</html>

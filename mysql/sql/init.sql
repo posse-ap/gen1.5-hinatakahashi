@@ -22,7 +22,7 @@ CREATE TABLE `study_date` (
 INSERT INTO `choices` (`id`,`date`) VALUES
 (1,1,'たかなわ',1);
 
-DROP TABLE IF EXISTS `study_content`;
+DROP TABLE IF EXISTS ``;
 CREATE TABLE `study_content` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `content` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci　DEFAULT NULL

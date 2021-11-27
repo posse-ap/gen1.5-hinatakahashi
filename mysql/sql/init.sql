@@ -9,8 +9,8 @@ CREATE TABLE `study`(
   `comment` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
 );
 
-INSERT INTO `study` (`id`,`date`,`content`,`language`,`time`,`comment`) VALUES
-(1,'東京の難読地名クイズ');
+-- INSERT INTO `study` (`id`,`date`,`content`,`language`,`time`,`comment`) VALUES
+-- (1,'東京の難読地名クイズ');
 
 -- 細かいテーブル
 DROP TABLE IF EXISTS `study_date`;
@@ -25,7 +25,7 @@ INSERT INTO `choices` (`id`,`date`) VALUES
 DROP TABLE IF EXISTS ``;
 CREATE TABLE `study_content` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `content` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci　DEFAULT NULL
+  `content` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
   );
 
 INSERT INTO `study_content` (`id`,`content`) VALUES
@@ -34,7 +34,7 @@ INSERT INTO `study_content` (`id`,`content`) VALUES
 DROP TABLE IF EXISTS `study_language`;
 CREATE TABLE `study_language` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `language` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci　DEFAULT NULL
+  `language` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
   );
 
 INSERT INTO `choices` (`id`,`language`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `choices` (`id`,`language`) VALUES
 DROP TABLE IF EXISTS `study_time`;
 CREATE TABLE `study_time` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `time` FLOAT(2,2)　DEFAULT NULL
+  `time` FLOAT(2,2) DEFAULT NULL
   );
 
 INSERT INTO `choices` (`id`,`time`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `choices` (`id`,`time`) VALUES
 DROP TABLE IF EXISTS `study_comment`;
 CREATE TABLE `study_comment` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `date` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci　DEFAULT NULL
+  `date` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
   );
 
 INSERT INTO `choices` (`id`,`comment`) VALUES

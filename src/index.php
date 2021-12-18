@@ -20,18 +20,18 @@ $choices = $db->query($stmt)->fetchAll(PDO::FETCH_ASSOC); //カラム名だけ�
 foreach ($questions as $question) {
 
   // print_r ($question['name']);
-  
+
 }
 
 // foreach ($choices as $choice) {
 
 //   print_r ($choice['name']);
-  
+
 // }
 // foreach ($choices as $choice) {
 
   // var_dump ($choices[1][0]);
-  
+
 // }
 
 ?>

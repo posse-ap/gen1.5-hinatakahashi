@@ -7,7 +7,6 @@ body{
   width: 100%;
   margin: 0;
   height: 64px;
-  /* ↓キターーー!!!↓ */
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -18,12 +17,12 @@ body{
   font-size: small;
 }
 
-.header_div1{
+.header_left{
   display: flex;
   align-items: center;
 }
 
-.posselogo{
+.posselogo_img{
   width: 150px;
   height: 30px;
   margin: 17px 30px;
@@ -130,15 +129,13 @@ td:last-child {
   display: none;
 }
 
-.successpng{
+.success_png{
   width: 100%;
   height: 100%;
 }
 
 /* 左右二分割 */
 .container{
-  /* box-sizing: border-box; */
-  /* max-width: 1200px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-left: 20px;
@@ -146,11 +143,6 @@ td:last-child {
   margin-left: 20px;
   margin-right: 20px;
 }
-
-/* .items, .bargraph, .languages, .contents{
-  box-sizing: border-box;
-  width: 100%;
-} */
 
 .left, .right{
   margin: 10px;
@@ -160,8 +152,6 @@ td:last-child {
   display: flex;
   flex-direction: column;
 }
-
-/* 勉強時間入力場所三分割 */
 
 p{
   margin-top: 5px;
@@ -208,7 +198,7 @@ p{
   background-color: #ffff;
   border-radius: 10px;
 }
-#bargraph{
+#studytime_bargraph{
   height: 100%;
   width: 100%;
   margin: 10px;
@@ -324,20 +314,20 @@ ul{
   margin: 0;
 }
 
-h2 .modalcontainer{
+h2 .modal_container{
   font-weight: normal;
   font-size: 90%;
   font-weight: bold;
   margin: 5px;
 }
 
-p .modalcontainer{
+p .modal_container{
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 /* クローズボタン */
-.dli-close {
+.close_button {
   float: right;
   margin: 10px;
   vertical-align: middle;
@@ -352,7 +342,7 @@ p .modalcontainer{
   cursor: pointer;
 }
 
-.dli-close::before {
+.close_button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -364,7 +354,7 @@ p .modalcontainer{
   transform: rotate(90deg);
 }
 
-.modalcontainer{
+.modal_container{
   font-size: small;
   font-weight: normal;
 }
@@ -374,18 +364,18 @@ form{
   margin-bottom: 20px;
 }
 
-.modalcontainer{
+.modal_container{
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 64px;
 }
 
-.modalleft{
+.modal_left{
   margin-left: 56px;
   margin-right: 20px;
 }
 
-.modalright{
+.modal_right{
   margin-left: 20px;
   margin-right: 56px;
 }
@@ -419,7 +409,7 @@ input[type="checkbox"]{
 }
 
 /* 記録・投稿ボタン */
-.buttonposition{
+.button_position{
   text-align: center;
 }
 

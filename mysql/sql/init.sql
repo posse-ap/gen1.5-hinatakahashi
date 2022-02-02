@@ -2,25 +2,25 @@
 DROP TABLE IF EXISTS study;
 CREATE TABLE study (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  study_date DATE NOT NULL COMMENT='学習した日付',
-  language_id INT NOT NULL COMMENT='学習言語ID',
-  content_id INT NOT NULL COMMENT='学習コンテンツID',
-  study_time INT NOT NULL COMMENT='学習時間'
+  study_date DATE NOT NULL COMMENT '学習した日付',
+  language_id INT NOT NULL COMMENT '学習言語ID',
+  content_id INT NOT NULL COMMENT '学習コンテンツID',
+  study_time INT NOT NULL COMMENT '学習時間'
   )
-  COMMENT='学習時間合計テーブル';
+  COMMENT '学習時間合計テーブル';
 
-INSERT INTO study (id,study_date,language_id,content_id,study_time) VALUES
-(2021-12-18,1,1,8),
-(2021-12-19,2,1,8);
+INSERT INTO study (study_date,language_id,content_id,study_time) VALUES
+('2021-12-18',1,1,8),
+('2021-12-19',2,1,8);
 
 
 DROP TABLE IF EXISTS study_languages;
 CREATE TABLE study_languages (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  study_language VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT='学習言語',
-  language_color VARCHAR(50) NOT NULL COMMENT='学習言語ごとの色'
+  study_language VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '学習言語',
+  language_color VARCHAR(50) NOT NULL COMMENT '学習言語ごとの色'
   )
-  COMMENT='学習言語テーブル';
+  COMMENT '学習言語テーブル';
 
 INSERT INTO study_languages (study_language,language_color) VALUES 
 ('JavaScript','1754ef'),
@@ -36,10 +36,10 @@ INSERT INTO study_languages (study_language,language_color) VALUES
 DROP TABLE IF EXISTS study_contents;
 CREATE TABLE study_contents (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  study_content VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT='学習コンテンツ',
-  content_color VARCHAR(50) NOT NULL COMMENT='学習コンテンツごとの色'
+  study_content VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '学習コンテンツ',
+  content_color VARCHAR(50) NOT NULL COMMENT '学習コンテンツごとの色'
   )
-  COMMENT='学習コンテンツテーブル';
+  COMMENT '学習コンテンツテーブル';
 
 INSERT INTO study_contents (study_content,content_color) VALUES 
 ('ドットインストール','1754ef'),

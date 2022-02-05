@@ -38,8 +38,8 @@ CREATE TABLE study (
   language_id INT NOT NULL COMMENT '学習言語ID',
   content_id INT NOT NULL COMMENT '学習コンテンツID',
   study_time INT NOT NULL COMMENT '学習時間',
-  FOREIGN KEY idx_languages (language_id) REFERENCES study_languages (id),
-  FOREIGN KEY idx_contents (content_id) REFERENCES study_contents (id)
+  FOREIGN KEY idx_languages (language_id) REFERENCES study_languages (id) on delete cascade,
+  FOREIGN KEY idx_contents (content_id) REFERENCES study_contents (id) on delete cascade
   )
   COMMENT '学習時間合計テーブル';
 

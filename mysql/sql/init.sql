@@ -1,19 +1,3 @@
--- 日付, 学習言語, 学習コンテンツ, 学習時間
-DROP TABLE IF EXISTS study;
-CREATE TABLE study (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  study_date DATE NOT NULL COMMENT '学習した日付',
-  language_id INT NOT NULL COMMENT '学習言語ID',
-  content_id INT NOT NULL COMMENT '学習コンテンツID',
-  study_time INT NOT NULL COMMENT '学習時間'
-  )
-  COMMENT '学習時間合計テーブル';
-
-INSERT INTO study (study_date,language_id,content_id,study_time) VALUES
-('2021-12-18',1,1,8),
-('2021-12-19',2,1,8);
-
-
 DROP TABLE IF EXISTS study_languages;
 CREATE TABLE study_languages (
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -45,3 +29,20 @@ INSERT INTO study_contents (study_content,content_color) VALUES
 ('ドットインストール','1754ef'),
 ('N予備校','2171bd'),
 ('POSSE課題','4dbdde');
+
+-- 日付, 学習言語, 学習コンテンツ, 学習時間
+DROP TABLE IF EXISTS study;
+CREATE TABLE study (
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  study_date DATE NOT NULL COMMENT '学習した日付',
+  language_id INT NOT NULL COMMENT '学習言語ID',
+  content_id INT NOT NULL COMMENT '学習コンテンツID',
+  study_time INT NOT NULL COMMENT '学習時間',
+  FOREIGN KEY idx_languages (language_id) REFERENCES study_languages (id),
+  FOREIGN KEY idx_contents (content_id) REFERENCES study_contents (id)
+  )
+  COMMENT '学習時間合計テーブル';
+
+INSERT INTO study (study_date,language_id,content_id,study_time) VALUES
+('2021-12-18',1,1,8),
+('2021-12-19',2,1,8);

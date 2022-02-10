@@ -1,5 +1,10 @@
 <?php
+
 include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
+
+$sum_study_time=$db->query('SELECT SUM(study_time) AS sum_study_time FROM study');
+$total_study_time=$sum_study_time->fetch();
+
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +128,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
           </li>
           <li class="studytimeoftotal">
             <p class="whentitle">Total</p>
-            <p class="number">1213</p>
+            <p class="number"><?= $total_study_time["sum_study_time"] ?></p>
             <p class="hour">hour</p>
           </li>
         </div>

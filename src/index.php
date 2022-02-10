@@ -2,8 +2,11 @@
 
 include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
 
-$sum_study_time=$db->query('SELECT SUM(study_time) AS sum_study_time FROM study');
-$total_study_time=$sum_study_time->fetch();
+$total_study_time=$db->query('SELECT SUM(study_time) AS sum_study_time FROM study');
+$totalStudyTime=$total_study_time->fetch();
+
+$day_study_time=$db->query('SELECT sum(study_time) as sum_study_time FROM study WHERE study_date = CURDATE()');
+$dayStudyTime=$day_study_time->fetch();
 
 ?>
 
@@ -118,7 +121,7 @@ $total_study_time=$sum_study_time->fetch();
         <div class="items">
           <li class="studytimeoftoday">
             <p class="whentitle">Today</p>
-            <p class="number">3</p>
+            <p class="number"><?= $dayStudyTime["sum_study_time"] ?></p>
             <p class="hour">hour</p>
           </li>
           <li class="studytimeofmonth">
@@ -128,7 +131,7 @@ $total_study_time=$sum_study_time->fetch();
           </li>
           <li class="studytimeoftotal">
             <p class="whentitle">Total</p>
-            <p class="number"><?= $total_study_time["sum_study_time"] ?></p>
+            <p class="number"><?= $totalStudyTime["sum_study_time"] ?></p>
             <p class="hour">hour</p>
           </li>
         </div>

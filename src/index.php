@@ -2,11 +2,15 @@
 
 include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
 
-$total_study_time=$db->query('SELECT SUM(study_time) AS sum_study_time FROM study');
+$total_study_time=$db->query("SELECT SUM(study_time) AS sum_study_time FROM study");
 $totalStudyTime=$total_study_time->fetch();
 
-$day_study_time=$db->query('SELECT sum(study_time) as sum_study_time FROM study WHERE study_date = CURDATE()');
+$day_study_time=$db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE study_date = CURRENT_DATE()");
 $dayStudyTime=$day_study_time->fetch();
+
+$month_study_time = $db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE study_date BETWEEN DATE_FORMAT(CURRENT_DATE(), '%Y-%M-%D') AND DATE_FORMAT(LAST_DAY(CURRENT_DATE), '%Y-%M-%D'");
+$monthStudyTime = $month_study_time->fetch();
+
 
 ?>
 

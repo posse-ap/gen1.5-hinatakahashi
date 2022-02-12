@@ -8,7 +8,7 @@ $totalStudyTime=$total_study_time->fetch();
 $day_study_time=$db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE study_date = CURRENT_DATE()");
 $dayStudyTime=$day_study_time->fetch();
 
-$month_study_time = $db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE study_date BETWEEN DATE_FORMAT(CURRENT_DATE(), '%Y-%M-%D') AND DATE_FORMAT(LAST_DAY(CURRENT_DATE), '%Y-%M-%D'");
+$month_study_time = $db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE DATE_FORMAT(study_date, '%Y%m') = DATE_FORMAT(now(), '%Y%m') ");
 $monthStudyTime = $month_study_time->fetch();
 
 

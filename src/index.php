@@ -1,5 +1,17 @@
 <?php
+
 include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
+
+$total_study_time=$db->query("SELECT SUM(study_time) AS sum_study_time FROM study");
+$totalStudyTime=$total_study_time->fetch();
+
+$day_study_time=$db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE study_date = CURRENT_DATE()");
+$dayStudyTime=$day_study_time->fetch();
+
+$month_study_time = $db->query("SELECT sum(study_time) AS sum_study_time FROM study WHERE DATE_FORMAT(study_date, '%Y%m') = DATE_FORMAT(now(), '%Y%m') ");
+$monthStudyTime = $month_study_time->fetch();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -113,7 +125,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
         <div class="items">
           <li class="studytimeoftoday">
             <p class="whentitle">Today</p>
-            <p class="number">3</p>
+            <p class="number"><?= $dayStudyTime["sum_study_time"] ?></p>
             <p class="hour">hour</p>
           </li>
           <li class="studytimeofmonth">
@@ -123,7 +135,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/db_connect.php");
           </li>
           <li class="studytimeoftotal">
             <p class="whentitle">Total</p>
-            <p class="number">1213</p>
+            <p class="number"><?= $totalStudyTime["sum_study_time"] ?></p>
             <p class="hour">hour</p>
           </li>
         </div>

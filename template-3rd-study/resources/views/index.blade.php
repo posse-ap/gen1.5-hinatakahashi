@@ -8,7 +8,7 @@
   <title>ぽっしょ</title>
   <!-- ↓jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <!-- 　↓chart.js↓ -->
+  <!-- ↓chart.js↓ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <!-- datalabelsプラグインを呼び出す -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -21,7 +21,7 @@
   <header>
     <h1 class="header">
       <div class="header_left">
-        <img src="./img/posselogo-min.png" alt="posseロゴ" class="posselogo_img">
+        <img src="/img/posseLogo.png" alt="posseロゴ" class="posselogo_img">
         <!-- <button type="menu" class="button">記録・投稿</button> -->
         <span class="nthweek">4th week</span>
       </div>
@@ -75,7 +75,7 @@
                   id="情報システム基礎知識(その他)">情報システム基礎知識(その他)
               </form>
             </div>
-            　
+            
           </div>
           <div class="modal_right">
             <div class="length">
@@ -169,7 +169,7 @@
   </main>
   <footer>
     <div class="footer">
-      <h2> ＜ 2010年　10月 ＞ </h2>
+      <h2> < 2010年 10月 > </h2>
     </div>
   </footer>
   <script src="./index.js"></script>

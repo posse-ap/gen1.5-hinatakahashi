@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('index');
 });
+
+//学習記録反映
+Route::get('/','StudyController@index');

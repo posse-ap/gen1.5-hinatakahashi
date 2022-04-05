@@ -105,21 +105,22 @@
   </header>
   <main>
     <div class="container">
+      {{-- @foreach($studies as $study) --}}
       <div class="left">
         <div class="items">
           <li class="studytimeoftoday">
             <p class="whentitle">Today</p>
-            <p class="number"></p>
+            <p class="number">{{$today_study_hour}}</p>
             <p class="hour">hour</p>
           </li>
           <li class="studytimeofmonth">
             <p class="whentitle">Month</p>
-            <p class="number">20</p>
+            <p class="number">{{$month_study_hour}}</p>
             <p class="hour">hour</p>
           </li>
           <li class="studytimeoftotal">
             <p class="whentitle">Total</p>
-            <p class="number"></p>
+            <p class="number">{{$total_study_hour}}</p>
             <p class="hour">hour</p>
           </li>
         </div>
@@ -165,6 +166,7 @@
           </div>
         </div>
       </div>
+      {{-- @endforeach --}}
     </div>
   </main>
   <footer>

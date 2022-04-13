@@ -16,35 +16,35 @@ class LanguageTableSeeder extends Seeder
     $param =[
         [
             'study_language'=>'JavaScript',
-            'language_color'=>'1754ef'
+            'language_color'=>'#1754ef'
         ],
         [
             'study_language'=>'CSS',
-            'language_color'=>'2171bd'
+            'language_color'=>'#2171bd'
         ],
         [
             'study_language'=>'PHP',
-            'language_color'=>'4dbdde'
+            'language_color'=>'#4dbdde'
         ],
         [
             'study_language'=>'HTML',
-            'language_color'=>'54cef9'
+            'language_color'=>'#54cef9'
         ],
         [
             'study_language'=>'Laravel',
-            'language_color'=>'b29ef3'
+            'language_color'=>'#b29ef3'
         ],
         [
             'study_language'=>'SQL',
-            'language_color'=>'6d46ec'
+            'language_color'=>'#6d46ec'
         ],
         [
             'study_language'=>'SHELL',
-            'language_color'=>'4f45ef'
+            'language_color'=>'#4f45ef'
         ],
         [
             'study_language'=>'情報システム基礎知識(その他)',
-            'language_color'=>'3636c1'
+            'language_color'=>'#3636c1'
         ]
         
     ];

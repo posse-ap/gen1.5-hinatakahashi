@@ -243,7 +243,7 @@ footer{
 }
 
 /* 凡例 */
-.languages1, .languages2, .languages3, .languages4, .languages5, .languages6, .languages7, .languages8, .contents1, .contents2, .contents3{
+.languages1, .contents1{
   list-style-type: none;
   display: inline;
   margin: 2px;
@@ -254,7 +254,7 @@ footer{
 }
 
 /*リストの各要素に前要素として■を付ける*/
-.languages1::before, .languages2::before, .languages3::before, .languages4::before, .languages5::before, .languages6::before, .languages7::before, .languages8::before, .contents1::before, .contents2::before, .contents3::before{
+.languages1::before, .contents1::before{
   content: "";
   display: inline-block;
   height: 12px;
@@ -295,7 +295,7 @@ li.languages8:before {
   background: #3636c1;
   border-radius:70%;
 }
-li.contents1:before {
+li.contents:before {
   background: #1754ef;
   border-radius:70%;
 }

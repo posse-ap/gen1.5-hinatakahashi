@@ -16,15 +16,15 @@ class ContentTableSeeder extends Seeder
     $param =[
         [
             'study_content'=>'N予備校',
-            'content_color'=>'1754ef'
+            'content_color'=>'#1754ef'
         ],
         [
             'study_content'=>'ドットインストール',
-            'content_color'=>'2171bd'
+            'content_color'=>'#2171bd'
         ],
         [
             'study_content'=>'POSSE課題',
-            'content_color'=>'4dbdde'
+            'content_color'=>'#14dbdde'
         ]
         
     ];

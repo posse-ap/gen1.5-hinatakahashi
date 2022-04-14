@@ -17,3 +17,8 @@ Route::get('/', function () {
 
 //学習記録反映
 Route::get('/','StudyController@index');
+
+Auth::routes();
+Auth::routes();
+
+Route::get('/home', 'StudyController@index')->name('home');

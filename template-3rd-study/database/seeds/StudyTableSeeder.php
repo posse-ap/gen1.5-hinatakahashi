@@ -32,10 +32,28 @@ class StudyTableSeeder extends Seeder
             'study_hour'=>'12'
         ],
         [
-            'study_date'=>'2022-04-05',
+            'study_date'=>'2022-04-07',
+            'language_id'=>'1',
+            'content_id'=>'3',
+            'study_hour'=>'20'
+        ],
+        [
+            'study_date'=>'2022-04-12',
+            'language_id'=>'2',
+            'content_id'=>'2',
+            'study_hour'=>'10'
+        ],
+        [
+            'study_date'=>'2022-04-13',
+            'language_id'=>'3',
+            'content_id'=>'2',
+            'study_hour'=>'12'
+        ],
+        [
+            'study_date'=>'2022-04-14',
             'language_id'=>'1',
             'content_id'=>'2',
-            'study_hour'=>'20'
+            'study_hour'=>'6'
         ]
     ];
     DB::table('studies')->insert($param);

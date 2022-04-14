@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Test;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,8 @@ Auth::routes();
 Auth::routes();
 
 Route::get('/home', 'StudyController@index')->name('home');
+
+Route::get('/test', function () {
+    Mail::to('test@example.com')->send(new Test);
+    return 'メール送信しました！';
+});

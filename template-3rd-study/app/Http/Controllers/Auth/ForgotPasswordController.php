@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
 {
+    use SendsPasswordResetEmails;
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -18,5 +19,25 @@ class ForgotPasswordController extends Controller
     |
     */
 
-    use SendsPasswordResetEmails;
+    // public function showLinkRequestForm()
+    // {
+    //     return view('auth.passwords.email');
+    // }
+
+    
+    // public function sendResetLinkEmail(Request $request)
+    // {
+    //     $this-&gt;validateEmail($request);
+    //     $response = $this-&gt;broker()-&gt;sendResetLink(
+    //         $request-&gt;only('email')
+    //     );
+    //     return $response == Password::RESET_LINK_SENT
+    //     ? $this-&gt;sendResetLinkResponse($response)
+    //     : $this-&gt;sendResetLinkFailedResponse($request, $response);
+    // }
+
+    // protected function validateEmail(Request $request)
+    // {
+    //     $this-&gt;validate($request, ['email' =&gt; 'required|email']);
+    // }
 }

@@ -28,9 +28,14 @@ class StudyController extends Controller
         // 合計の学習時間
         $total_study_hour = Study::all()->sum('study_hour');
 
-        // 日毎の学習時間
-        // $per_day_study_hours = Study::all()->groupBy('study_date');
+        // date型を日付だけ取ってくる
+        $study_date = Study::select('study_date')->pluck('study_date');
+        
+        foreach($study_date as $date){
+            $dates[] = date_format($date , 'd');
+        }
+        
 
-        return view('index',compact('studies','today_study_hour','month_study_hour','total_study_hour','languages','contents'));
+        return view('index',compact('studies','today_study_hour','month_study_hour','total_study_hour','languages','contents','study_date','dates'));
     }
 }

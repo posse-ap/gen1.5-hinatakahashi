@@ -14,7 +14,7 @@
   <!-- datalabelsプラグインを呼び出す -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="modal.css">
+  {{-- <link rel="stylesheet" href="modal.css"> --}}
 </head>
 
 <body>
@@ -168,7 +168,7 @@
       <h2> < 2010年 10月 > </h2>
     </div>
   </footer>
-  <script src="./index.js"></script>
+  {{-- <script src="./index.js"></script> --}}
 </body>
 
 <script>
@@ -229,7 +229,7 @@ var piechart2= new Chart(ctx2, {
           @endforeach
         ],
         data: [
-          @foreach ($studies as $study )
+          @foreach ($studies as $study)
           {{$study -> study_hour}},
           @endforeach
         ] //グラフのデータ
@@ -249,9 +249,16 @@ var ctx = document.getElementById("studytime_bargraph").getContext("2d");
         type: 'bar',                           //◆棒グラフ
         // lineWidth: 100,
         data: {                                //◆データ
-            labels: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31')],     //ラベル名
+            labels: [
+              @foreach ($dates as $date)
+              {{$date}},
+              @endforeach              
+          ],     //ラベル名
             datasets: [{                       //データ設定
                 data: [
+                  @foreach ($studies as $study)
+                  {{$study -> study_hour}},
+                  @endforeach
                 ],          //データ内容
                 backgroundColor: '#2aaae4'   //背景色
             }
@@ -283,7 +290,7 @@ var ctx = document.getElementById("studytime_bargraph").getContext("2d");
                     },
                 }],
                 xAxes: [{                         //x軸設定
-                  　
+                  
                     display: true,                //表示設定
                     scaleLabel: {
                       display: true,
@@ -308,7 +315,7 @@ var ctx = document.getElementById("studytime_bargraph").getContext("2d");
 
 
 // モーダル
-(function() {
+$(function() {
   'use strict';
 
   var open = document.getElementById('open');
@@ -335,12 +342,12 @@ var ctx = document.getElementById("studytime_bargraph").getContext("2d");
     // success.className = 'hidden';
     close.click();
   });
-})();
+});
 
 // カレンダー表示
 $(function () {
   $('.gakushubi').on('click', () => {
-      $('#calendar').toggle(); //toggle←要素を表示なら非表示に、非表示なら表示に切り替える
+      $('#calendar').toggle();
   });
 });
 

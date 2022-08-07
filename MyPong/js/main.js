@@ -56,10 +56,28 @@
             this.h = 16;
             this.x = this.canvas.width / 2 - (this.w / 2);
             this.y = this.canvas.height - 32;
+            this.mouseX = this.x;
+            this.addHandler();
+        }
+
+        addHandler() {
+            document.addEventListener('mousemove', e => {
+                this.mouseX = e.clientX;
+            });
         }
 
         update() {
+            // ↓canvasの位置取得↓
+            const rect = this.canvas.getBoundingClientRect();
+            this.x = this.mouseX - rect.left - (this.w / 2);
 
+            // ↓パドルがcanvasの外に出るのを止める↓
+            if (this.x < 0) {
+                this.x = 0;
+            }
+            if (this.x + this.w > this.canvas.width) {
+                this.x = this.canvas.width - this.w;
+            }
         }
 
         draw() {

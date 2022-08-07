@@ -48,11 +48,32 @@
         }
     }
 
+    class Paddle {
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.ctx = this.canvas.getContext('2d');
+            this.w = 60;
+            this.h = 16;
+            this.x = this.canvas.width / 2 - (this.w / 2);
+            this.y = this.canvas.height - 32;
+        }
+
+        update() {
+
+        }
+
+        draw() {
+            this.ctx.fillStyle = '#fdfdfd';
+            this.ctx.fillRect(this.x, this.y, this.w, this.h);
+        }
+    }
+
     class Game {
         constructor(canvas) {
             this.canvas = canvas;
             this.ctx = this.canvas.getContext('2d');
             this.ball = new Ball(this.canvas);
+            this.paddle = new Paddle(this.canvas);
             this.loop();
         }
 
@@ -67,13 +88,14 @@
 
         update() {
             this.ball.update();
+            this.paddle.update();
         }
 
         draw() {
             // ↓動いたボールの奇跡をクリアにする, 範囲:左上からcanvasの右下まで↓
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
             this.ball.draw();
-            // console.log(new Date());
+            this.paddle.draw();
         }
 
     }

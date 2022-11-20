@@ -336,7 +336,7 @@
   <script>
   $(function(){
     $('#button1').on('click', function(){
-      // alert($("#form1").serialize());
+      alert($("#form1").serialize());
       $('#modalPost').modal('hide');
       $('#modalLoading').modal('show');
 

@@ -79,6 +79,7 @@ class HomeController extends Controller
     }
 
     public function post(Request $request){
+        return($request);
 
         $study_date = $request->date;
         $study_date = str_replace('年', '-', $study_date);

@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 services:
   ph3-posseapp-web:
     platform: linux/x86_64

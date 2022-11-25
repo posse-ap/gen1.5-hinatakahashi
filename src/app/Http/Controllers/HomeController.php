@@ -14,6 +14,13 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class HomeController extends Controller
 {
+
+    protected function logout()
+    {
+        Auth::logout();
+        return redirect(route('login'));
+    }
+    
     public function index(Request $request){
         $users = User::all();
         $user = Auth::user();
@@ -79,7 +86,8 @@ class HomeController extends Controller
     }
 
     public function post(Request $request){
-        return($request);
+        // return($request->languages);
+
 
         $study_date = $request->date;
         $study_date = str_replace('年', '-', $study_date);
@@ -125,6 +133,12 @@ class HomeController extends Controller
                 'status' => $twitter_text . PHP_EOL . '#twitteroauth'
             ]);
         }
-        return "OK";
     }
+
+    // public function destroy($userId)
+    // {
+    //     $user = User::find($userId);
+    //     $user->delete();
+    //     return redirect()->route('login');
+    // }
 }

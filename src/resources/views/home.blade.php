@@ -16,6 +16,7 @@
         <p class="header-text my-auto">{{ $header_week }}th week</p>
       </div>
       <button class="post-btn mr-0 ml-auto my-auto d-none d-lg-block" data-toggle="modal" data-target="#modalPost">記録・投稿</button>
+      <a href="{{ route('logout') }}" class="post-btn mr-0 ml-auto my-auto d-none d-lg-block">ログアウト</a>
     </div>
   </header>
 
@@ -89,7 +90,7 @@
   <footer class="mt-3 mt-lg-4 main-container mx-auto">
     <p class="text-center font-weight-bold"><span class="pr-3" id="prev">&lt;</span><span id="thisMonth"></span><span class="pl-3" id="next">&gt;</span></p>
 
-    <button class="post-btn mx-auto d-block d-lg-none" data-toggle="modal" data-target="#modalPost">記録・投稿</button>
+    <button class="post-btn mx-auto d-block d-lg-none" data-toggle="modal" data-target="#modalPost">記録・投稿</button>    
 </form>
   </footer>
 

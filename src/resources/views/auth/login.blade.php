@@ -44,5 +44,19 @@
                 </x-jet-button>
             </div>
         </form>
+        {{-- @foreach ($users as $user)
+        <tr>
+            <td>{{ $users->family_name }}</td>
+            <td>{{ $users->first_name }}</td>
+            <form action="{{route('user.destroy',$user->id)}}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">削除</button>
+            </form>
+            </td>
+        </tr>
+        @endforeach --}}
+        <x-jet-button class="ml-4">
+            <a href="{{ route('register') }}" class="text-white font-bold">ユーザー追加</a>
+        </x-jet-button>
     </x-jet-authentication-card>
 </x-guest-layout>

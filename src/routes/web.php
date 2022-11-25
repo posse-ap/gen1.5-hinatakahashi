@@ -20,8 +20,17 @@ Route::get('/error', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [HomeController::class, 'index']);
 
+Route::get('logout', [HomeController::class, 'logout'])->name('logout');
+
 Route::middleware(['auth:sanctum', 'verified'])->post('/', [HomeController::class, 'post']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+// 一覧
+// Route::get('/login', [HomeController::class, 'index'])->name('login');
+
+// 削除
+// Route::post('/destroy{userId}', [HomeController::class, 'destroy'])->name('user.destroy');

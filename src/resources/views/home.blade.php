@@ -16,6 +16,8 @@
         <p class="header-text my-auto">{{ $header_week }}th week</p>
       </div>
       <button class="post-btn mr-0 ml-auto my-auto d-none d-lg-block" data-toggle="modal" data-target="#modalPost">記録・投稿</button>
+          <a href="{{ route('news') }}" class="post-btn mr-0 ml-auto my-auto d-none d-lg-block">ニュース画面へ</a>
+          <a href="{{ route('admin') }}" class="post-btn mr-0 ml-auto my-auto d-none d-lg-block">管理画面へ</a>
       <a href="{{ route('logout') }}" class="post-btn mr-0 ml-auto my-auto d-none d-lg-block">ログアウト</a>
     </div>
   </header>
@@ -132,6 +134,10 @@
 
                   <input id="contents3" type="checkbox" value="3" name="contents[]">
                   <label for="contents3">POSSE課題</label>
+                  @foreach($contents as $content)
+                  <input id={{ $content->id }} type="checkbox" value={{ $content->id }} name="contents[]">
+                  <label for={{ $content->id }}>{{ $content->content }}</label>
+                  @endforeach
                 </div>
 
                 <div class="modal-contents-sp-part d-block d-lg-none pt-3">
@@ -152,6 +158,10 @@
                     <input type="checkbox" id="contents6" value="3" name="contents[]">
                     <label for="contents6">POSSE課題</label>
                   </div>
+                  @foreach($languages as $language)
+                  <input id={{ $language->id }} type="checkbox" value={{ $language->id }} name="languages[]">
+                  <label for={{ $language->id }}>{{ $language->language }}</label>
+                  @endforeach
                 </div>
 
                 <div class="modal-language-pc-part d-none d-lg-block pt-3">
@@ -179,6 +189,10 @@
 
                   <input id="language8" type="checkbox" value="8" name="languages[]">
                   <label for="language8">情報システム基礎知識(その他)</label>
+                  @foreach($languages as $language)
+                  <input id={{ $language->id }} type="checkbox" value={{ $language->id }} name="languages[]">
+                  <label for={{ $language->id }}>{{ $language->language }}</label>
+                  @endforeach
                 </div>
 
                 <div class="modal-language-sp-part d-block d-lg-none pt-3">
@@ -213,6 +227,10 @@
 
                     <input id="language16" type="checkbox" value="8" name="languages[]">
                     <label for="language16">情報システム基礎知識(その他)</label>
+                    @foreach($languages as $language)
+                    <input id={{ $language->id }} type="checkbox" value={{ $language->id }} name="languages[]">
+                    <label for={{ $language->id }}>{{ $language->language }}</label>
+                    @endforeach
                   </div>
                 </div>
               </div>

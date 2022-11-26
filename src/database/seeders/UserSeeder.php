@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
             'email' => 'test@posse-ap.com',
             'password' => Hash::make('password'),
             'generation' => 1,
+            'role' => 1,
         ]);
 
         User::create([
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
             'email' => Str::random(8).'@gmail.com',
             'password' => Hash::make('password'),
             'generation' => 2,
+            'role' => 0,
         ]);
     }
 }

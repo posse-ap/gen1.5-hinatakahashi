@@ -38,6 +38,10 @@
                 <x-jet-label for="generation" value="{{ __('学期') }}" />
                 <x-jet-input id="generation" class="block mt-1 w-full" type="number" name="generation" :value="old('generation')" required />
             </div>
+            <div class="mt-4">
+                <x-jet-label for="role" value="{{ __('ロール') }}" />
+                <x-jet-input id="role" class="block mt-1 w-full" type="number" name="role" :value="old('role')" required />
+            </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('パスワード') }}" />

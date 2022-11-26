@@ -26,7 +26,8 @@ class CreateNewUser implements CreatesNewUsers
             'first_name_hira' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'generation' => ['required', 'integer', 'max:3']
+            'generation' => ['required', 'integer', 'max:3'],
+            'role' => ['required', 'boolean']
         ])->validate();
 
         return User::create([
@@ -37,6 +38,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'generation' => $input['generation'],
             'password' => Hash::make($input['password']),
+            'role' => $input['role'],
         ]);
     }
 }

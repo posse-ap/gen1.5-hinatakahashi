@@ -18,33 +18,30 @@ Route::get('/error', function () {
     return view('error');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/', [HomeController::class, 'index']);
 
-Route::get('logout', [HomeController::class, 'logout'])->name('logout');
 
-Route::get('news', [HomeController::class, 'news'])->name('news');
-Route::get('news/{id}', [HomeController::class, 'news_detail'])->name('news_detail');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('logout', [HomeController::class, 'logout'])->name('logout');
 
-// Route::middleware(['auth:sanctum', 'verified'])->post('/', [HomeController::class, 'post']);
+    // ユーザー
+    Route::get('/', [HomeController::class, 'index']);
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+    //管理画面
+    Route::get('admin', [HomeController::class, 'admin'])->name('admin');
+    Route::post('admin/user/add', [HomeController::class, 'admin_user_add'])->name('user_add');
+    Route::get('admin/content/edit{id}', [HomeController::class, 'admin_content_edit'])->name('content_edit');
+    Route::post('admin/content/edit{id}', [HomeController::class, 'admin_content_update'])->name('content_update');
+    Route::get('admin/content/delete{id}', [HomeController::class, 'admin_content_delete'])->name('content_delete');
+    Route::post('admin/content/add', [HomeController::class, 'admin_content_add'])->name('content_add');
+    Route::get('admin/language/edit{id}', [HomeController::class, 'admin_language_edit'])->name('language_edit');
+    Route::post('admin/language/edit{id}', [HomeController::class, 'admin_language_update'])->name('language_update');
+    Route::get('admin/language/delete{id}', [HomeController::class, 'admin_language_delete'])->name('language_delete');
+    Route::post('admin/language/add', [HomeController::class, 'admin_language_add'])->name('language_add');
 
-//管理画面
-Route::get('admin', [HomeController::class, 'admin'])->name('admin');
-
-Route::post('admin/user/add', [HomeController::class, 'admin_user_add'])->name('user_add');
-
-Route::get('admin/content/edit{id}', [HomeController::class, 'admin_content_edit'])->name('content_edit');
-Route::post('admin/content/edit{id}', [HomeController::class, 'admin_content_update'])->name('content_update');
-Route::get('admin/content/delete{id}', [HomeController::class, 'admin_content_delete'])->name('content_delete');
-Route::post('admin/content/add', [HomeController::class, 'admin_content_add'])->name('content_add');
-Route::get('admin/language/edit{id}', [HomeController::class, 'admin_language_edit'])->name('language_edit');
-Route::post('admin/language/edit{id}', [HomeController::class, 'admin_language_update'])->name('language_update');
-Route::get('admin/language/delete{id}', [HomeController::class, 'admin_language_delete'])->name('language_delete');
-Route::post('admin/language/add', [HomeController::class, 'admin_language_add'])->name('language_add');
-
+    // ニュース
+    Route::get('news', [HomeController::class, 'news'])->name('news');
+    Route::get('news/{id}', [HomeController::class, 'news_detail'])->name('news_detail');
+});
 
 // 一覧
 // Route::get('/login', [HomeController::class, 'index'])->name('login');
